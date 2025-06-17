@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8lu-eN-giq">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="dj4-Y5-hPr">
+            <objects>
+                <viewController id="8lu-eN-giq" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u3Q-t4-2Eo"/>
+                        <viewControllerLayoutGuide type="bottom" id="nzf-Kc-PJ2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cMP-gW-7am">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="jRi-pR-HAm">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UAE Logo" translatesAutoresizingMaskIntoConstraints="NO" id="x1h-yT-pgC" userLabel="Logo">
+                                <rect key="frame" x="97.666666666666686" y="209" width="198" height="236"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="236" id="QCE-al-irS"/>
+                                    <constraint firstAttribute="width" constant="198" id="eKP-YF-QAk"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="App Title" translatesAutoresizingMaskIntoConstraints="NO" id="b57-BZ-m8Z" userLabel="Organisation Title">
+                                <rect key="frame" x="78" y="455" width="237" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="Ngg-bp-vff"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fka-wc-E6s" userLabel="Application Name">
+                                <rect key="frame" x="103.33333333333333" y="526" width="186.33333333333337" height="63.333333333333371"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Staff Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Ekc-VQ-g6Q">
+                                        <rect key="frame" x="0.0" y="0.0" width="39" height="63.333333333333336"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Staff" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCG-Tv-zJS">
+                                        <rect key="frame" x="59.000000000000021" y="0.0" width="127.33333333333331" height="63.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="53"/>
+                                        <color key="textColor" red="0.59215686270000001" green="0.39607843139999999" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ep6-xm-9XN" userLabel="Footer">
+                                <rect key="frame" x="80.333333333333329" y="801" width="232.66666666666669" height="17"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Every Minute Count!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LA-jw-RhG">
+                                        <rect key="frame" x="0.0" y="0.0" width="131" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.59215686270000001" green="0.39607843139999999" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GO TAWAJUD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7K-QC-0OX">
+                                        <rect key="frame" x="136" y="0.0" width="96.666666666666686" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
+                                        <color key="textColor" red="0.59215686270000001" green="0.39607843139999999" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jRi-pR-HAm" firstAttribute="leading" secondItem="cMP-gW-7am" secondAttribute="leading" id="39Q-lA-DXz"/>
+                            <constraint firstItem="b57-BZ-m8Z" firstAttribute="centerX" secondItem="cMP-gW-7am" secondAttribute="centerX" id="7mp-6U-mjc"/>
+                            <constraint firstItem="fka-wc-E6s" firstAttribute="centerX" secondItem="cMP-gW-7am" secondAttribute="centerX" id="8Sr-cI-QRC"/>
+                            <constraint firstAttribute="trailing" secondItem="jRi-pR-HAm" secondAttribute="trailing" id="Lh6-Yc-BVc"/>
+                            <constraint firstItem="x1h-yT-pgC" firstAttribute="top" secondItem="u3Q-t4-2Eo" secondAttribute="bottom" constant="150" id="MJd-Nz-YjF"/>
+                            <constraint firstAttribute="bottom" secondItem="jRi-pR-HAm" secondAttribute="bottom" id="NCe-K4-j3w"/>
+                            <constraint firstItem="fka-wc-E6s" firstAttribute="top" secondItem="b57-BZ-m8Z" secondAttribute="bottom" constant="20" id="Rsq-h1-ovY"/>
+                            <constraint firstItem="x1h-yT-pgC" firstAttribute="centerX" secondItem="cMP-gW-7am" secondAttribute="centerX" id="Uq2-bf-M8s"/>
+                            <constraint firstItem="Ep6-xm-9XN" firstAttribute="centerX" secondItem="cMP-gW-7am" secondAttribute="centerX" id="nnh-ZN-vXW"/>
+                            <constraint firstItem="b57-BZ-m8Z" firstAttribute="top" secondItem="x1h-yT-pgC" secondAttribute="bottom" constant="10" id="yUQ-fj-iWw"/>
+                            <constraint firstItem="jRi-pR-HAm" firstAttribute="top" secondItem="cMP-gW-7am" secondAttribute="top" id="yak-UB-sfM"/>
+                            <constraint firstAttribute="bottom" secondItem="Ep6-xm-9XN" secondAttribute="bottom" constant="34" id="yl9-cz-VO3"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="contact" selectedImage="contactSelected" id="rOx-bc-gyh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aes-8d-zIc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-886.25954198473278" y="-323.23943661971833"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="App Title" width="237" height="51"/>
+        <image name="Background" width="375" height="812"/>
+        <image name="Staff Icon" width="39" height="61"/>
+        <image name="UAE Logo" width="198" height="236"/>
+        <image name="contact" width="30" height="30"/>
+        <image name="contactSelected" width="30" height="30"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

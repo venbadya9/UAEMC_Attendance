@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "User Profile.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

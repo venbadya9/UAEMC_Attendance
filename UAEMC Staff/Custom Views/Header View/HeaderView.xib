@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderView" customModule="UAEMC_Staff" customModuleProvider="target">
+            <connections>
+                <outlet property="backButton" destination="cpT-7l-dmt" id="k9X-Ts-lqe"/>
+                <outlet property="headerLabel" destination="w9A-kF-oDv" id="wop-po-ka1"/>
+                <outlet property="menuButton" destination="Aup-2h-BGA" id="hqV-lD-f1h"/>
+                <outlet property="notificationButton" destination="XcA-G7-hi1" id="y8g-1W-jps"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XcA-G7-hi1" userLabel="Information">
+                    <rect key="frame" x="313" y="10" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="tWI-88-Lgw"/>
+                        <constraint firstAttribute="width" constant="40" id="wmH-lw-G9c"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="Notification"/>
+                    <connections>
+                        <action selector="notification:" destination="-1" eventType="touchUpInside" id="nbC-vU-Qpu"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aup-2h-BGA" userLabel="Profile">
+                    <rect key="frame" x="353" y="10" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="MJU-9d-22e"/>
+                        <constraint firstAttribute="width" constant="40" id="ejB-Cj-PtB"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="Menu"/>
+                    <connections>
+                        <action selector="menuTapped:" destination="-1" eventType="touchUpInside" id="E6D-DF-R1P"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9A-kF-oDv">
+                    <rect key="frame" x="0.0" y="19.666666666666668" width="393" height="21.000000000000004"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="P5M-S1-VsE"/>
+                    </constraints>
+                    <attributedString key="attributedText">
+                        <fragment content="Services">
+                            <attributes>
+                                <color key="NSColor" red="0.59215686274509804" green="0.43529411764705883" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="14" name="Poppins-Bold"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpT-7l-dmt" userLabel="Back">
+                    <rect key="frame" x="0.0" y="10" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="0F8-Wn-TZZ"/>
+                        <constraint firstAttribute="height" constant="40" id="EUE-Xy-4Hk"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="Back"/>
+                    <connections>
+                        <action selector="backTapped:" destination="-1" eventType="touchUpInside" id="25e-Qd-u71"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Aup-2h-BGA" firstAttribute="leading" secondItem="XcA-G7-hi1" secondAttribute="trailing" id="2WW-Io-VEY"/>
+                <constraint firstItem="w9A-kF-oDv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3Op-iT-CJd"/>
+                <constraint firstItem="cpT-7l-dmt" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Aew-4R-Xew"/>
+                <constraint firstAttribute="trailing" secondItem="w9A-kF-oDv" secondAttribute="trailing" id="NB0-6i-xzb"/>
+                <constraint firstItem="Aup-2h-BGA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="PeV-6C-2GL"/>
+                <constraint firstItem="XcA-G7-hi1" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="UVh-Ar-AJA"/>
+                <constraint firstItem="cpT-7l-dmt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Vw2-At-Uo5"/>
+                <constraint firstAttribute="trailing" secondItem="Aup-2h-BGA" secondAttribute="trailing" id="ZX1-Sp-aaT"/>
+                <constraint firstItem="w9A-kF-oDv" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="jVC-3l-Vdq"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="133.58778625954199" y="-151.40845070422537"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Back" width="24" height="21"/>
+        <image name="Menu" width="26" height="20"/>
+        <image name="Notification" width="19" height="26"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

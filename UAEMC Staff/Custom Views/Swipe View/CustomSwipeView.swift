@@ -1,0 +1,137 @@
+import UIKit
+
+//MARK: Protocol
+
+protocol AttendanceDelegate {
+    func getInTime()
+    func getOutTime()
+}
+
+class CustomSwipeView: UIView {
+    
+    //MARK: Variables
+    
+    var button: UIButton!
+    var imageView: UIImageView!
+    let inImage = UIImage(named: "In")
+    let outImage = UIImage(named: "Out")
+    var initialPosition: CGPoint!
+    var delegate: AttendanceDelegate!
+    
+    //MARK: Constants
+    
+    let imageWidth = 108.0
+    let imagePadding = 20.0
+    let imageHeight = 24.0
+    let viewPadding = 10.0
+    
+    // MARK: Lifecycle Methods
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupView()
+    }
+    
+    //MARK: Private Methods
+    
+    private func setupView() {
+        imageView = UIImageView(frame: CGRect(x: self.frame.width - imageWidth - imagePadding, y: 16.0, width: imageWidth, height: imageHeight))
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = inImage
+        addSubview(imageView)
+        
+        button = UIButton(frame: CGRect(x: 5.0, y: 5.0, width: 127.0, height: 46.0))
+        button.setTitle("In", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Poppins-Bold", size: 16.0)
+        button.backgroundColor = UIColor(hexaRGB: "#DBCDB8")
+        button.layer.cornerRadius = 20.0
+        button.addShadow()
+        addSubview(button)
+        
+        self.layer.cornerRadius = 28.0
+        
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
+        button.addGestureRecognizer(panGesture)
+    }
+    
+    //MARK: Pan Gesture Method
+    
+    @objc func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
+        let translation = gesture.translation(in: self)
+        
+        switch gesture.state {
+        case .began:
+            initialPosition = gesture.view?.center
+            
+        case .changed:
+            if translation.x >= 0
+                && translation.x <= frame.width - button.frame.width - viewPadding
+                && button.titleLabel?.text == "In" {
+                
+                button.frame.origin.x = translation.x + 5.0
+            } else if translation.x >= -frame.width + button.frame.width + 5.0
+                        && translation.x <= -5
+                        && button.titleLabel?.text == "Out" {
+                button.frame.origin.x = frame.width - button.frame.width + translation.x
+            }
+            
+        case .ended, .cancelled:
+            let swipeProgress = abs(translation.x) / self.bounds.width
+            if swipeProgress > 0.4 {
+                if translation.x > 0 {
+                    setupCheckOut()
+                    self.delegate.getInTime()
+                    
+                } else {
+                    setupCheckIn()
+                    self.delegate.getOutTime()
+                }
+            } else {
+                animateButton(to: initialPosition)
+            }
+        default:
+            break
+        }
+    }
+    
+    // MARK: Methods
+    
+    func updateInitialConfig() {
+        if let details = DatabaseHelper.shared.fetchCheckInDetails() {
+            if details.checkInStatus != .unknown {
+                details.checkInStatus == .checkedIn ? setupCheckOut() : setupCheckIn()
+            } else {
+                setupCheckIn()
+            }
+        }
+    }
+    
+    func animateButton(to position: CGPoint) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.button.center = position
+        })
+    }
+    
+    func setupCheckOut() {
+        self.imageView.image = outImage
+        self.animateButton(to: CGPoint(x: self.frame.width - 5.0 - self.button.bounds.width / 2, y: self.button.center.y))
+        self.imageView.removeAllConstraints()
+        self.imageView.frame = CGRect(x: imagePadding, y: 16.0, width: imageWidth, height: 24.0)
+        self.button.setTitle("Out", for: .normal)
+        self.button.backgroundColor = UIColor(hexaRGB: "#CDA262")
+    }
+    
+    func setupCheckIn() {
+        imageView.image = inImage
+        animateButton(to: CGPoint(x: button.bounds.width / 2 + 5.0, y: button.center.y))
+        self.imageView.frame = CGRect(x: self.frame.width - imageWidth - imagePadding, y: 16.0, width: imageWidth, height: imageHeight)
+        self.button.setTitle("In", for: .normal)
+        button.backgroundColor = UIColor(hexaRGB: "#DBCDB8")
+    }
+}

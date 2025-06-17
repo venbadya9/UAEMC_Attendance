@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23507" systemVersion="24B91" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="CheckIn" representedClassName="CheckIn" syncable="YES">
+        <attribute name="checkInDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="checkInStatus" optional="YES" attributeType="String"/>
+        <attribute name="elapsedTime" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="firstIn" optional="YES" attributeType="String"/>
+        <attribute name="lastout" optional="YES" attributeType="String"/>
+        <attribute name="location" optional="YES" attributeType="String"/>
+        <attribute name="workMode" optional="YES" attributeType="String"/>
+    </entity>
+</model>
